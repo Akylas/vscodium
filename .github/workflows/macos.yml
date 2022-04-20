@@ -68,9 +68,9 @@ jobs:
 
       - name: Sign binary
         env:
-          CERTIFICATE_OSX_P12: ${{ secrets.CERTIFICATE_OSX_P12 }}
-          CERTIFICATE_OSX_PASSWORD: ${{ secrets.CERTIFICATE_OSX_PASSWORD }}
-          CERTIFICATE_OSX_ID: ${{ secrets.CERTIFICATE_OSX_ID }}
+          CERTIFICATE_OSX_P12: ${{ secrets.APPLE_CERTIFICATE }}
+          CERTIFICATE_OSX_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          CERTIFICATE_OSX_ID: ${{ secrets.APPLE_IDENTITY_ID }}
         if: env.SHOULD_BUILD == 'yes' && env.SHOULD_DEPLOY == 'yes'
         run: |
           if [ -d "VSCode-darwin-${VSCODE_ARCH}" ]; then # just in case the build failed
