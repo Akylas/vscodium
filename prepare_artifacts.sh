@@ -26,7 +26,7 @@ if [[ "${OS_NAME}" == "osx" ]]; then
     echo "Building and moving DMG"
     pushd "VSCode-darwin-${VSCODE_ARCH}"
     npx create-dmg VSCodium.app ..
-    mv "../VSCodium ${MS_TAG}.dmg" "../artifacts/VSCodium.${VSCODE_ARCH}.${MS_TAG}.dmg"
+    mv "../VSCodium ${MS_TAG/-insider/}.dmg" "../artifacts/VSCodium.${VSCODE_ARCH}.${MS_TAG}.dmg"
     popd
   fi
 elif [[ "${OS_NAME}" == "windows" ]]; then
